@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animatednavbarincss</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            margin-top:50px;
+        }
+        .header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:50px;
+background-color:red;
+display: flex;
+justify-content: space-between;
+align-items:center;
+padding: 0 16px;
+
+        }
+        .logo{
+            font-size:20px;
+            font-weight: 500;
+            color:white;
+        }
+        .header button{
+            width:50px;
+            flex-shrink:0;
+            font-size:30px;
+            background: none;
+            border: none;
+            outline: none;
+            color:white;
+            padding:10px;
+            cursor:pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:5px;
+        }
+        .bar{
+            width: 100%;
+            height:3px;
+background-color:white;
+border-radius: 10px;        
+}
+.links{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:2;
+    height:100vh;
+    width:250px;
+background-color: white;
+
+
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    padding:12px 15px;
+    font-weight:500;
+    text-decoration: none;
+font-size:14px;
+color:blue;
+}
+
+.link.active,.link:hover{
+    background-color: white;
+    color:red;
+}
+
+.links{
+    transform:translateX(-250px);
+
+}
+
+.content{
+    padding: 15px;
+}
+.open .links{
+    transform: translateX(0px);
+    box-shadow:  0 0 15px rgba(0,0,0,0.2);
+}
+
+.nav-overlay{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(2px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+ 
+.open .nav-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+    <div class="logo">tutor joes</div>
+    
+    <button  id="btnnav" type="button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</div>
+<div class="side-nav">
+    <div class="links">
+        
+        <a href="#" class="link active">home</a>
+        <a href="#" class="link">conatct</a>
+        <a href="#" class="link">search</a>
+        <a href="#"class="link">about</a>
+    </div>
+    <div class="nav-overlay">
+
+    </div>
+
+</div>
+<div class="content">
+    <h3>page title</h3>
+    <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo iste magni ratione voluptatem illum perferendis at odit ex est, quo, illo dolor ullam itaque veniam eveniet rem nihil, nesciunt quasi. Hic assumenda molestiae magni tempore aut fugiat rem iusto laboriosam nisi et a, veniam modi aperiam qui! Quod cupiditate pariatur ipsum. Pariatur distinctio consequatur ipsa ullam molestias in ducimus, voluptatem harum. Maxime sunt nisi rerum iure est dolorum quasi ex obcaecati molestias? Fugit qui sint aperiam earum, facere hic ut odio eos adipisci impedit atque et optio ad, nulla quaerat illo asperiores delectus amet nisi repellat? Est nihil maxime distinctio sequi praesentium repellat excepturi natus? Quam nesciunt, omnis dolore dicta ea molestiae tempore consequuntur eveniet dolorem repellendus ab nisi obcaecati aperiam ad modi nihil voluptatum illo voluptas consequatur maxime delectus nobis? Quasi numquam sint odio fuga incidunt praesentium accusamus natus beatae, quibusdam nostrum pariatur deserunt amet nobis, quo aspernatur officia nisi? Ad sit quia architecto vel recusandae quaerat dolore impedit maiores illo. Impedit nulla maxime cum eveniet fugiat illo obcaecati natus quidem ipsa aliquid, id alias necessitatibus vel eligendi, hic consequuntur, deserunt mollitia? Beatae non repellendus, ipsa dolorum reiciendis doloribus laborum culpa dolore omnis ea dignissimos maiores incidunt aliquid, quod praesentium inventore nihil autem hic? Fugiat et quos, provident, numquam ducimus esse quo rerum eligendi aliquam ex repudiandae, quae vel quia molestiae. Architecto, voluptatibus similique deleniti accusantium odit asperiores, tenetur dolor quibusdam labore harum quia temporibus ratione sit illo blanditiis? Sint quisquam repudiandae, asperiores unde molestias iste consequatur numquam fugiat sequi repellendus mollitia odit doloremque quis corrupti tenetur aliquid deserunt ratione exercitationem fuga iure voluptates nostrum! A amet, nulla et impedit facilis commodi sit sunt placeat architecto alias earum rerum illum omnis nisi, vel optio natus iure ab fugit debitis, consequatur labore animi vitae repellendus. Commodi distinctio nulla labore? Reiciendis.
+    </P>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim nulla, odio officia delectus fuga aliquid ipsa minus, tenetur recusandae voluptates hic magni corporis, eius cumque quibusdam dolore? Expedita aliquid fugit consequatur corrupti voluptate praesentium asperiores ut, est accusamus, temporibus, nemo laborum corporis placeat eaque natus! Sed, dolores inventore dolorum eius, enim quidem fuga atque, vitae laborum asperiores perspiciatis nobis nostrum? Ipsum praesentium dignissimos similique sit aliquid accusantium cumque quidem blanditiis asperiores. Id, eius! Facere corrupti libero ipsam adipisci consequatur. Illum incidunt numquam quaerat et maiores laudantium, expedita deserunt harum magni quas beatae repudiandae magnam amet! Quas ex fuga asperiores praesentium enim possimus tenetur soluta dolore exercitationem, ratione at a nulla doloribus atque, adipisci omnis voluptatem minus expedita obcaecati vitae aspernatur ea rerum culpa. Officiis, ipsam libero veritatis fugiat corporis laudantium id modi tempore, officia nulla corrupti praesentium. Obcaecati nulla praesentium, officiis provident vel vitae. Suscipit enim ratione necessitatibus laudantium provident dolores. Laborum nisi excepturi ipsam quidem doloremque ducimus ipsa ad quibusdam voluptate, itaque repudiandae, nobis beatae sequi natus. Ad nulla consequatur veritatis? Aut repellendus tempora iste, nisi rerum excepturi necessitatibus provident! Quis eum nostrum saepe dolorem voluptate? Deserunt officiis qui sed minus sunt iste in provident, repellendus doloremque tempora tempore culpa voluptates, aspernatur rerum tenetur quidem, excepturi quas quis? Rerum repellat adipisci alias, hic expedita, minus ea incidunt tempora molestiae dicta, modi nam enim accusantium aut at. Eveniet, soluta quibusdam fuga labore dignissimos ullam? Et a porro sit quam libero qui quo aliquid cumque perferendis quas optio itaque fugit asperiores accusamus sunt, magni voluptatum id architecto maiores veritatis! Tempora quis labore earum laborum reprehenderit officia, ipsam et voluptatibus cumque incidunt. Maxime doloremque odio facere iusto ipsa. Nulla nam natus exercitationem esse vero autem sit corporis molestias possimus distinctio quos quia, placeat, labore ex eius nostrum dolore et, ab debitis ea perferendis. Libero ea aliquid exercitationem cupiditate autem maiores, est laboriosam illo quam ratione praesentium quae aut repudiandae eligendi odit laborum accusamus, tenetur sit ipsam alias quis. Animi accusamus ipsum quia ipsa sed assumenda quisquam, nobis reiciendis odio aperiam! Quia cum magni eius necessitatibus hic, nam tempora obcaecati excepturi sint quasi. Nostrum sequi saepe accusantium blanditiis consectetur doloribus voluptas, inventore corporis omnis laudantium? Illo, maxime accusantium autem deserunt optio nesciunt eligendi vitae natus minus nihil officiis eaque facilis cumque necessitatibus quae perferendis veniam dolorem! Inventore soluta reprehenderit, fugit laboriosam, corrupti harum tempore modi provident, quo eum quod dolor quasi ipsum sapiente? Quasi quaerat ipsam molestias commodi aspernatur officiis ipsa, magni illum aliquid. Dolorum blanditiis nam minima quos consequuntur dolor soluta temporibus eveniet. Molestiae iste officia laboriosam placeat cum? Maiores, odit debitis, accusantium et explicabo expedita dignissimos sint nisi eaque laudantium, quae temporibus voluptatum fuga vitae atque praesentium aliquam quis inventore odio dolores? Dolorum distinctio, quasi veniam consequuntur architecto, assumenda odit ipsa nulla illo ducimus nam beatae non. Quas, fugiat eos explicabo voluptatem quidem rerum odio molestias esse quod iste est corrupti suscipit cumque, eaque tempore rem? Ullam, quod repudiandae. Iure praesentium perferendis illum voluptas dignissimos sit, esse minima animi beatae aliquid?</p>
+</div>
+
+
+</body>
+
+<script src="js/animatenavg.js">
+    
+    
+</script>
+
+</html>
